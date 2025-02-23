@@ -41,7 +41,8 @@
         "original",
         "automatic",
         "revised"
-      ]
+      ],
+      "default": "automatic"
     },
     "is_translated": {
       "pluginOptions": {

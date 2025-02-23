@@ -582,6 +582,22 @@ export interface ApiBookBook extends Struct.CollectionTypeSchema {
     author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
     chapters: Schema.Attribute.Relation<'oneToMany', 'api::chapter.chapter'>;
     category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
+    translation_state: Schema.Attribute.Enumeration<
+      ['original', 'automatic', 'revised']
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<'automatic'>;
+    is_translated: Schema.Attribute.Boolean &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<false>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -625,7 +641,8 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
         i18n: {
           localized: true;
         };
-      }>;
+      }> &
+      Schema.Attribute.DefaultTo<'automatic'>;
     is_translated: Schema.Attribute.Boolean &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

@@ -86,6 +86,29 @@
       "relation": "oneToOne",
       "target": "api::category.category",
       "inversedBy": "book"
+    },
+    "translation_state": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "original",
+        "automatic",
+        "revised"
+      ],
+      "default": "automatic"
+    },
+    "is_translated": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean",
+      "default": false
     }
   }
 }
