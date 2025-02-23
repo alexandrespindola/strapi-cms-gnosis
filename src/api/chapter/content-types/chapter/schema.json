@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "books",
+  "collectionName": "chapters",
   "info": {
-    "singularName": "book",
-    "pluralName": "books",
-    "displayName": "Book",
-    "description": ""
+    "singularName": "chapter",
+    "pluralName": "chapters",
+    "displayName": "Chapter"
   },
   "options": {
     "draftAndPublish": true
@@ -40,7 +39,15 @@
       },
       "type": "string"
     },
-    "year": {
+    "content": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "richtext"
+    },
+    "order_number": {
       "pluginOptions": {
         "i18n": {
           "localized": false
@@ -48,44 +55,42 @@
       },
       "type": "integer"
     },
-    "description": {
+    "chapter_number": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "integer"
+    },
+    "translation_state": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "text"
-    },
-    "cover_image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
+      "type": "enumeration",
+      "enum": [
+        "original",
+        "automatic",
+        "revised"
       ],
+      "default": "automatic"
+    },
+    "is_translated": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "type": "boolean",
+      "default": false
     },
-    "author": {
+    "book": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::author.author",
-      "inversedBy": "books"
-    },
-    "chapters": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::chapter.chapter",
-      "mappedBy": "book"
-    },
-    "category": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::category.category",
-      "inversedBy": "book"
+      "target": "api::book.book",
+      "inversedBy": "chapters"
     }
   }
 }
