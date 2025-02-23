@@ -618,6 +618,21 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
         };
       }>;
     book: Schema.Attribute.Relation<'oneToOne', 'api::book.book'>;
+    translation_state: Schema.Attribute.Enumeration<
+      ['original', 'automatic', 'revised']
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    is_translated: Schema.Attribute.Boolean &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<false>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

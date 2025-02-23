@@ -29,6 +29,28 @@
       "relation": "oneToOne",
       "target": "api::book.book",
       "mappedBy": "category"
+    },
+    "translation_state": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "original",
+        "automatic",
+        "revised"
+      ]
+    },
+    "is_translated": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "boolean",
+      "default": false
     }
   }
 }
