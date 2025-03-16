@@ -223,11 +223,12 @@
       "regex": "^(\\+|00)?[1-9]\\d{0,3}[.\\- ]?(\\(\\d{1,4}\\)|\\d{1,4})[.\\- ]?\\d{1,4}[.\\- ]?\\d{1,10}$"
     },
     "image_collection": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
       ],
-      "type": "media",
-      "multiple": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -235,11 +236,12 @@
       }
     },
     "video_collection": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "videos"
       ],
-      "type": "media",
-      "multiple": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -247,11 +249,12 @@
       }
     },
     "audio_collection": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "audios"
       ],
-      "type": "media",
-      "multiple": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -259,11 +262,12 @@
       }
     },
     "pdf_collection": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "files"
       ],
-      "type": "media",
-      "multiple": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -350,6 +354,14 @@
         "automatic",
         "revised"
       ]
+    },
+    "ssml": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text"
     }
   }
 }
