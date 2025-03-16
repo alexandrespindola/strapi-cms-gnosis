@@ -18,7 +18,6 @@ export default [
   {
     name: 'strapi::cors',
     config: {
-      enabled: true,
       header: '*',
       origin: ['http://localhost:3000', 'https://railwayapp-strapi-production-3ea7.up.railway.app']
     }
