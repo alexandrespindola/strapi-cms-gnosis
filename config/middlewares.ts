@@ -19,7 +19,7 @@ export default [
     name: 'strapi::cors',
     config: {
       header: '*',
-      origin: ['http://localhost:3000', 'https://railwayapp-strapi-production-3ea7.up.railway.app']
+      origin: ['http://localhost:3000', 'https://railwayapp-strapi-production-3ea7.up.railway.app', 'strapi-cms-gnosis.up.railway.app', 'https://cms.gnosisdeutschland.org']
     }
   },
   'strapi::poweredBy',
