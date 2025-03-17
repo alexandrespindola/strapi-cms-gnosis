@@ -4,7 +4,8 @@
   "info": {
     "singularName": "chapter",
     "pluralName": "chapters",
-    "displayName": "Chapter"
+    "displayName": "Chapter",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -91,6 +92,14 @@
       "relation": "manyToOne",
       "target": "api::book.book",
       "inversedBy": "chapters"
+    },
+    "ssml": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "text"
     }
   }
 }

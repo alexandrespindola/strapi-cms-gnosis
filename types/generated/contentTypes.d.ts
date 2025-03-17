@@ -672,6 +672,7 @@ export interface ApiChapterChapter extends Struct.CollectionTypeSchema {
     singularName: 'chapter';
     pluralName: 'chapters';
     displayName: 'Chapter';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -735,6 +736,12 @@ export interface ApiChapterChapter extends Struct.CollectionTypeSchema {
       }> &
       Schema.Attribute.DefaultTo<false>;
     book: Schema.Attribute.Relation<'manyToOne', 'api::book.book'>;
+    ssml: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
